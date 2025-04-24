@@ -1,0 +1,116 @@
+.category_container {
+    padding: 4rem 6rem;
+  }
+  
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .heading h2 {
+    font-size: 2rem;
+    color: #222;
+  }
+  
+  .category_controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .category_controls select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .view-all-btn {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  
+  .category_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem 0;
+  }
+  
+  .category_card {
+    width: 22rem;
+    background-color: var(--color-white);
+    border-radius: 0.8rem;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .category_card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .category_card img {
+    width: 100%;
+    border-radius: 0.8rem;
+    object-fit: cover;
+  }
+  
+  .category_content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-top: 1rem;
+  }
+  
+  .category_content h3 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  .category_content p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .category_content .explore-link {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: 0.5rem;
+  }
+  
+  @media (max-width: 760px) {
+    .category_container {
+      padding: 4rem 1.5rem;
+    }
+  
+    .category_grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .category_card {
+      width: 100%;
+    }
+  
+    .heading {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .category_controls {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
