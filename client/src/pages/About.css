@@ -1,0 +1,253 @@
+/* Base Styles */
+.about-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Hero Section */
+  .about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../assets/hero-bg.jpg') center/cover no-repeat;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+  
+  /* Our Story Section */
+  .our-story {
+    padding: 80px 0;
+  }
+  
+  .our-story .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .story-content {
+    flex: 1;
+  }
+  
+  .story-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+  
+  .story-content p {
+    margin-bottom: 1rem;
+  }
+  
+  .story-image {
+    flex: 1;
+  }
+  
+  .story-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Founder Section */
+  .founder-section {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+  }
+  
+  .founder-section .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .founder-image {
+    flex: 1;
+  }
+  
+  .founder-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .founder-quote {
+    flex: 1;
+  }
+  
+  .founder-quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .founder-quote blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #ddd;
+    position: absolute;
+    left: -15px;
+    top: -20px;
+    z-index: 0;
+  }
+  
+  .founder-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .founder-title {
+    color: #777;
+  }
+  
+  /* Values Section */
+  .values-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .values-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #222;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .value-card {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .value-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .value-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  /* CTA Section */
+  .about-cta {
+    background-color: #222;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .about-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-cta .cta-button {
+    background-color: white;
+    color: #222;
+  }
+  
+  .about-cta .cta-button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .our-story .container,
+    .founder-section .container {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .story-image,
+    .founder-image {
+      order: -1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .about-hero {
+      height: 50vh;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .cta-button {
+      padding: 10px 20px;
+    }
+  
+    .our-story,
+    .founder-section,
+    .values-section {
+      padding: 60px 0;
+    }
+  }
