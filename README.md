@@ -1,4 +1,5 @@
-# 🛍️ MERN Stack E-commerce Application(currently working...)
+
+# 🛍️ MERN Stack E-commerce Application(currently Updating...)
 
 A full-featured, responsive e-commerce platform built with the **MERN Stack (MongoDB, Express.js, React, Node.js)**. This application allows users to browse, filter, and purchase fashion products, including clothing, shoes, and hand watches.
 
