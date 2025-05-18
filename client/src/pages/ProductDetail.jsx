@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './productDetail.css';
-import productsData from './ProductData'
+import productsData from './ProductData';
+import { useCart } from '../context/CartContext';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
 
-  // Mock function to find product by ID - replace with your actual data source
-  const findProductById = (productId) => {
+  const { addToCart } = useCart();
 
-    return productsData.find(product => product.id === productId);
-  };
-
-  const product = findProductById(id);
+  const product = productsData.find(product => product.id === id);
 
   if (!product) {
     return <div className="product-not-found">Product not found</div>;
   }
 
-  // Mock sizes data - adjust based on your product categories
   const sizes = ['XS', 'S', 'M', 'L', 'XL'];
   const colors = ['Black', 'White', 'Blue', 'Red', 'Green'];
 
@@ -29,18 +25,23 @@ const ProductDetail = () => {
       alert('Please select a size');
       return;
     }
-    // Add to cart logic would go here
+
+    const item = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      size: selectedSize,
+      quantity,
+    };
+
+    addToCart(item);
     alert(`Added ${quantity} ${product.name} (Size: ${selectedSize}) to cart`);
   };
 
-  const incrementQuantity = () => {
-    setQuantity(prev => prev + 1);
-  };
-
+  const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(prev => prev - 1);
-    }
+    if (quantity > 1) setQuantity(prev => prev - 1);
   };
 
   return (
@@ -55,9 +56,9 @@ const ProductDetail = () => {
             <img src={product.image} alt={product.name} />
           </div>
           <div className="thumbnail-images">
-            <img src={product.image} alt="Thumbnail 1" />
-            <img src={product.image} alt="Thumbnail 2" />
-            <img src={product.image} alt="Thumbnail 3" />
+            {[1, 2, 3].map((_, idx) => (
+              <img key={idx} src={product.image} alt={`Thumbnail ${idx + 1}`} />
+            ))}
           </div>
         </div>
 
@@ -133,7 +134,7 @@ const ProductDetail = () => {
                 relatedProduct.category === product.category &&
                 relatedProduct.id !== product.id
             )
-            .slice(0, 4) // Show maximum 4 related products
+            .slice(0, 4)
             .map((relatedProduct) => (
               <Link
                 to={`/product/${relatedProduct.id}`}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
-import teamImage from '../assets/team1.jpg'; // Replace with your image
-import founderImage from '../assets/owner.jpg'; // Replace with your image
-import valuesIcon from '../assets/values.jpg'; // Replace with your icon
-import missionIcon from '../assets/goal.jpg'; // Replace with your icon
-import visionIcon from '../assets/vision.jpg'; // Replace with your icon
+import teamImage from '../assets/team1.jpg'; 
+import founderImage from '../assets/owner.jpg'; 
+import valuesIcon from '../assets/values.jpg';
+import missionIcon from '../assets/goal.jpg'; 
+import visionIcon from '../assets/vision.jpg';
 
 const About = () => {
   return (

@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom'
 import { IoMdPerson, IoMdMenu, IoMdClose } from "react-icons/io";
 import { GiShoppingBag } from "react-icons/gi";
 import { useState } from 'react';
+import { useCart } from '../../context/CartContext'
 
 const Header = () => {
-    const { cartItemCount } = 1
+  const { cartItems } = useCart();
+  const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     return (
@@ -34,8 +37,8 @@ const Header = () => {
                         <Link to="/cart" className="iconButton" aria-label="cart">
                             <div className="cartBadge">
                                 <GiShoppingBag />
-                                {cartItemCount && (
-                                    <span className='badge'>{cartItemCount}</span>
+                                {cartCount > 0 && (
+                                    <span className='badge'>{cartCount }</span>
                                 )}
                             </div>
                         </Link>
